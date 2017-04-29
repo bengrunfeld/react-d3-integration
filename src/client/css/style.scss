@@ -1,0 +1,16 @@
+$text-color: #3e3e3e;
+
+p {
+  font-family: helvetica;
+  font-size: 18px;
+  color: $text-color;
+}
+
+rect {
+  fill: darkblue;
+}
+
+.path-0 {
+  fill: none;
+  stroke: darkblue;
+}
