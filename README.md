@@ -1,6 +1,6 @@
-# RetireUp Coding Challenge
+# React Redux Express Starter App
 
-React, Redux and D3 app that shows the impact of using a capped strategy against S&P.
+Use as a basic app to 
 
 ## Installation
 
@@ -11,10 +11,9 @@ React, Redux and D3 app that shows the impact of using a capped strategy against
 
 **Run unit tests:**
 
-    npm test
+* `npm run test`
+* `npm run coverage`
 
-**Generate code coverage report**
+## Standards
 
-## Folder Format
-
-Based on [Re-ducks](https://github.com/alexnm/re-ducks)
+Tries to implement [Re-ducks](https://github.com/alexnm/re-ducks)
