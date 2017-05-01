@@ -3,40 +3,29 @@ import React from 'react'
 import { render } from 'react-dom'
 import { HashRouter, Route, Link } from 'react-router-dom'
 import { Provider, connect } from 'react-redux'
-import { createStore } from 'redux'
 
+// App Modules
+import configureStore from '../app/state/store'
+import routes from '../app/routes'
 
-class Root extends React.Component {
-  render(){
-    return (
-      <h1>Root</h1>
-    )
-  }
+let initialState = {
+  chart: {data: []},
+  sidebar: {cap: 0, years: {mix: 1997, max: 2016}} 
 }
 
-class Ben extends React.Component {
-  render(){
-    return (
-      <h1>Hello Ben</h1>
-    )
-  }
+let store = configureStore(initialState)
+
+const getRoot = () => {
+  return (
+    <Provider store={store}>
+      <HashRouter>
+        <div>
+          { routes }
+        </div>
+      </HashRouter>
+    </Provider>
+  )
 }
 
-class Alex extends React.Component {
-  render(){
-    return (
-      <h1>Hello Alex</h1>
-    )
-  }
-}
-
-render(
-  <HashRouter>
-    <div>
-      <Route path='/ben' component={Ben} />
-      <Route path='/alex' component={Alex} />
-      <Route exact path='/' component={Root} />
-    </div>
-  </HashRouter>,
-  document.getElementById('main')
-)
+// Root renderer for the app
+render(getRoot(),document.getElementById('main'))

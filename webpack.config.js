@@ -1,6 +1,6 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const path = require('path')
 const webpack = require('webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: './src/client/index.js',
@@ -13,6 +13,11 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
     port: 4000
   },
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: 'src/server/sio-client.js' }
+    ])
+  ],
   module: {
     loaders: [
       {

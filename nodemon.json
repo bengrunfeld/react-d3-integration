@@ -1,6 +1,6 @@
 {
   "ignore": ["*.test.js", "node_modules", "dist"],
   "events": {
-    "restart": "webpack"
+    "restart": "npm run compile"
   }
 }
