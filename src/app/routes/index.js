@@ -5,15 +5,16 @@ import { Home, D3Chart, SvgChart } from '../views/pages'
 
 const routes = () => { 
   return (
-      <div>
-        <Route exact path="/d3" component={ D3Chart } /> 
-        <Route path="/d3/:id/:query" component={ D3Chart } /> 
-        <Route path="/svg" component={ SvgChart } />
-        <Route exact path="/" component={ Home } />
-      </div>
+    <div>
+      <Route exact path="/" component={ D3Chart } />
+    </div>
   )
 }
 
 
 export default routes()
-  
+
+// For reference - here's how to deep link
+// <Route exact path="/d3" component={ D3Chart } /> 
+// <Route path="/d3/:id/:query" component={ D3Chart } /> 
+// <Route path="/svg" component={ SvgChart } />

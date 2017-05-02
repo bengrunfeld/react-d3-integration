@@ -6,7 +6,9 @@ import { Provider, connect } from 'react-redux'
 
 // App Modules
 import configureStore from '../app/state/store'
-import routes from '../app/routes'
+import chartRoutes from '../app/routes'
+import { App } from '../app/views/layouts'
+import { Sidebar } from '../app/views/pages'
 
 let initialState = {
   chart: {data: []},
@@ -19,9 +21,10 @@ const getRoot = () => {
   return (
     <Provider store={store}>
       <HashRouter>
-        <div>
-          { routes }
-        </div>
+        <App>
+          { chartRoutes }
+          <Sidebar />
+        </App>
       </HashRouter>
     </Provider>
   )

@@ -15,7 +15,8 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin([
-      { from: 'src/server/sio-client.js' }
+      { from: 'src/server/sio-client.js' },
+      { from: 'src/client/html/index.ejs', to: 'index.html'}
     ])
   ],
   module: {

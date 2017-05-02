@@ -1,10 +1,12 @@
+// Libraries
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+
+// App Modules
 import { chartOperations } from '../../state/ducks/chart'
 import { sidebarOperations } from '../../state/ducks/sidebar'
 
-// App Modules
-import { App } from '../layouts'
+
 
 class Chart extends Component {
   constructor(props) {
@@ -19,18 +21,12 @@ class Chart extends Component {
   render() {
     const { chart } = this.props
 
-    console.log(chart)
-
     return (
-      <App>
+      <div className="chart d3 col-xs-9">
         <div>
           <h1>This is D3</h1>
         </div>
-
-        {/* Conditionally renders content based on whether the URL Param exists */}
-        {this.props.match.params.id ? <p>props.match.params.id</p>: ''}
-        {this.props.match.params.query ? <p>props.match.params.query</p>: ''}
-      </App>
+      </div>
     )
   }
 }
@@ -55,7 +51,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(Chart)
 //     <div><h1>This is D3</h1></div>
 // 
 //     {/* Conditionally renders content based on whether the URL Param exists */}
-//     {props.match.params.id ? <p>props.match.params.id</p>: ''}
-//     {props.match.params.query ? <p>props.match.params.query</p>: ''}
+//      // Use this.props when inside a stateful React Component
+//     {this.props.match.params.id ? <p>props.match.params.id</p>: ''}
+//     {this.props.match.params.query ? <p>props.match.params.query</p>: ''}
 //   </App>
 // )
