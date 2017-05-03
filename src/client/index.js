@@ -12,7 +12,8 @@ import { Sidebar } from '../app/views/pages'
 
 let initialState = {
   chart: {data: []},
-  sidebar: {cap: 0, years: {mix: 1997, max: 2016}} 
+  sidebar: {cap: 5, years: {min: 2005, max: 2012}},
+  stats: {min: 0, max: 0, stdv: 0, count: 0, avg: 0}
 }
 
 let store = configureStore(initialState)

@@ -32,7 +32,8 @@ Use as a basic app to
 * Post requests handled with Body-Parser
 * Babel transpiles ES6 (ES2015) as well as JSX to Vanilla Javascript, so ES6 `import` statements will work inside of your Node files
 * Unit Testing and Coverage Reports use JEST, which exceeds the capabilities and performance of Mocha, Chai, and other testing libraries
-* Deep Linking to Chart Type (D3 or SVG) as well as data query (e.g 5% cap between 2000-2005). 
+* Deep Linking to Chart Type (D3 or SVG) as well as data query (e.g 5% cap between 2000-2005).
+
 
 ## Advanced Redux Concepts
 

@@ -3,4 +3,20 @@ $sb-color: #3ca853;
 .sidebar {
   background: $sb-color;
   height: 100vh;
+
+  .slider-title, .slider-data {
+    color: white;
+    margin: 30px 0 20px 0;
+  }
+
+  .slider-title {
+    font-size: 24px;
+  }
+
+  .slider-data {
+    text-align: right;
+    font-size: 20px;
+    position: relative;
+    top: 5px;
+  }
 }

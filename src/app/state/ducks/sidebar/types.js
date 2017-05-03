@@ -1,7 +1,7 @@
-const ADJUST_CAP = 'sidebar/ADJUST_CAP'
-const ADJUST_YEARS = 'sidebar/ADJUST_YEARS'
+const SET_CAP = 'sidebar/SET_CAP'
+const SET_YEARS = 'sidebar/SET_YEARS'
 
 export default {
-  ADJUST_CAP,
-  ADJUST_YEARS
+  SET_CAP,
+  SET_YEARS
 }

@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import express from 'express'
-let watch = require('watch')
+import cors from 'cors'
 
 // Code for Hot Reloading
 let http = require('http')
@@ -12,6 +12,8 @@ let reload = true
 
 // Regular App
 let app = express()
+
+app.use(cors())
 
 // Set EJS as templating engine
 app.set('view engine', 'ejs')

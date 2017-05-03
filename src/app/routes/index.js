@@ -5,7 +5,7 @@ import { Home, D3Chart, SvgChart } from '../views/pages'
 
 const routes = () => { 
   return (
-    <div>
+    <div className="chart col-xs-9">
       <Route exact path="/" component={ D3Chart } />
     </div>
   )

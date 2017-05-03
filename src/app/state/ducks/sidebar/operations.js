@@ -1,10 +1,10 @@
 import actions from './actions'
 
-export const adjustCap = actions.adjustCap
+export const setCap = actions.setCap
 
-export const adjustYears = actions.adjustYears
+export const setYears = actions.setYears
 
 export default {
-  adjustCap,
-  adjustYears
+  setCap,
+  setYears
 }

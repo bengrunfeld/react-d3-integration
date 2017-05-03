@@ -1,20 +1,20 @@
 import types from './types'
 
-export const adjustCap = (newCap) => {
+export const setCap = (cap) => {
   return ({
-    types: types.ADJUST_CAP,
+    type: types.SET_CAP,
     payload: cap
   })
 }
 
-export const adjustYears = (minYear, maxYear) => {
+export const setYears = (minYear, maxYear) => {
   return ({
-    types: types.ADJUST_YEARS,
-    payload: {"minYear": minYear, "maxYear": maxYear}
+    type: types.SET_YEARS,
+    payload: {"min": minYear, "max": maxYear}
   })
 }
 
 export default {
-  adjustCap,
-  adjustYears
+  setCap,
+  setYears
 }
