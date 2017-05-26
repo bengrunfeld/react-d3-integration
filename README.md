@@ -19,6 +19,7 @@ Use as a basic app to
 
 * There are some development issues around `react-router`. Read more [here](https://github.com/ReactTraining/react-router/issues/4752).
 * Nodemon does not offer hot reloading on successful Webpack build, so a slightly hacky work around was used that utilizes Web Sockets and `setTimeout` on Nodemon restart. 
+* Isomorphic-fetch is no longer actively maintained, and has not received a commit in a year. Despite this, it still receives 150k downloads a day. [Fetch Ponyfill](https://github.com/qubyte/fetch-ponyfill) may be a good replacement, but it's hard to tell.
 
 ## APP HIGHLIGHTS:
 

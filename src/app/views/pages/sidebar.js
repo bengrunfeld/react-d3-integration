@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import Slider from 'rc-slider';
 
 // App Modules
-import { chartOperations } from '../../state/ducks/chart'
 import { sidebarOperations } from '../../state/ducks/sidebar'
 
 // CSS
@@ -31,7 +30,7 @@ class Sidebar extends Component {
 
   setCapValue(value) {
     const { setCap } = this.props
-    
+
     // Dispatches an action to update the Slider values in State
     setCap(value)
   }
@@ -51,7 +50,7 @@ class Sidebar extends Component {
         <div className="cap-slider">
           <div className="row">
             <p className="slider-title col-xs-4">Cap</p>
-            <p className="slider-data col-xs-8">{sidebar.cap}</p>
+            <p className="slider-data col-xs-8">{sidebar.cap}%</p>
           </div>
           <SliderWithTooltip 
             min={0} 
@@ -95,6 +94,7 @@ const mapDispatchToProps = {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)
+// export default Sidebar
 
 
 //  NB – Conditionally renders content based on whether the URL Param exists

@@ -5,7 +5,6 @@ import * as d3 from 'd3'
 
 // App Modules
 import { chartOperations } from '../../state/ducks/chart'
-import { sidebarOperations } from '../../state/ducks/sidebar'
 
 // CSS
 import '../../../client/css/chart.scss'
@@ -18,7 +17,7 @@ class Chart extends Component {
   }
 
   componentDidMount() {
-    const { chart, sidebar, fetchData } = this.props
+    const { fetchData } = this.props
     fetchData('http://localhost:3000/data')
   }
 
@@ -26,22 +25,17 @@ class Chart extends Component {
     let parseDate = d3.timeParse("%m/%d/%y")
     let parseYears = d3.timeParse("%m/%d/%Y")
 
-    // NOTE: In a production app, this would be more specifc
     let minYears = parseYears(`11/30/${years.min}`)
     let maxYears = parseYears(`12/31/${years.max}`)
-
-    console.log(minYears, maxYears)
 
     let deriverdData = data.filter((d, i) => {
       let parsedDate = parseDate(d.date)
       return (parsedDate >= minYears && parsedDate <= maxYears)
     })
 
-    console.log(deriverdData)
-
-    let dateMinAndMax = d3.extent(data, d => parseDate(d.date))
-    let closeMinAndMax = d3.extent(data, d => d.close)
-    let adjCloseMinAndMax = d3.extent(data, d => d.adj_close)
+    let dateMinAndMax = d3.extent(deriverdData, d => parseDate(d.date))
+    let closeMinAndMax = d3.extent(deriverdData, d => d.close)
+    let adjCloseMinAndMax = d3.extent(deriverdData, d => d.adj_close)
 
     let x = d3.scaleTime()
               .domain(dateMinAndMax)
@@ -59,7 +53,11 @@ class Chart extends Component {
                     .x(d => x(parseDate(d.date)))
                     .y(d => y(d.close))
 
-    return line(data)
+    return line(deriverdData)
+  }
+
+  componentDidUpdate() {
+
   }
 
   render() {
@@ -67,7 +65,7 @@ class Chart extends Component {
 
     return (
       <svg className="chart-container">
-        <path d={this.calculatePath(chart.data, 400, 600, sidebar.cap, sidebar.years)} className="path-0" />
+        <path d={this.calculatePath(chart.data, 500, 600, sidebar.cap, sidebar.years)} className="path-0" />
       </svg>
     )
   }
@@ -80,11 +78,14 @@ Chart.defaultProps = {
 }
 
 const mapStateToProps = (state) => {
-  return {chart: state.chart}
+  return {
+    chart: state.chart,
+    sidebar: state.sidebar
+  }
 }
 
 const mapDispatchToProps = {
-  fetchData: chartOperations.fetchDataFromApi  
+  fetchData: chartOperations.fetchDataFromApi
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Chart)

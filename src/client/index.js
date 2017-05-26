@@ -9,6 +9,7 @@ import configureStore from '../app/state/store'
 import chartRoutes from '../app/routes'
 import { App } from '../app/views/layouts'
 import { Sidebar } from '../app/views/pages'
+import { sidebarOperations } from '../app/state/ducks/sidebar'
 
 let initialState = {
   chart: {data: []},
@@ -16,6 +17,7 @@ let initialState = {
   stats: {min: 0, max: 0, stdv: 0, count: 0, avg: 0}
 }
 
+// Store
 let store = configureStore(initialState)
 
 const getRoot = () => {
