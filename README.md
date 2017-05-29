@@ -40,5 +40,38 @@ Use as a basic app to
 
 * `Operations` - We want to separate the thunks from the action creators, even with the cost of writing extra code. So we define an operation as a wrapper over actions. If the operation only dispatches a single action — doesn’t actually use redux-thunk — we forward the action creator function. If the operation uses a thunk, it can dispatch many actions and chain them with promises. Operations are part of the public interface of the duck. Actions are encapsulated, operations are exposed. [Read more](https://medium.freecodecamp.com/scaling-your-redux-app-with-ducks-6115955638be)
 
+## Features
+
+### Trend Viewer
+
+The sidebar allows you to choose which trends you'd like to see on the chart for a given time range
+
+### Data Table
+
+Data corresponding to the selected trend and time range will fill the table below the chart
+
+### Available Trends
+
+Currently, the current trends are available for the data:
+
+* Balance
+* Capped Balance
+* Balance with Fees
+* Capped Balance with Fees
+* Return
+* Capped Return
+* Return vs Capped Return
+
+
+
+
+
+
+
+
+
+
+
+
 
 
