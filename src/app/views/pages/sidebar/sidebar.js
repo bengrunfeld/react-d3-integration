@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Slider from 'rc-slider';
 
 // App Modules
-import { sidebarOperations } from '../../state/ducks/sidebar'
+import { sidebarOperations } from '../../../state/ducks/sidebar'
 
 // CSS
 import '../../../../client/css/sidebar.scss'
