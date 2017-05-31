@@ -4,10 +4,10 @@ import { connect } from 'react-redux'
 import * as d3 from 'd3'
 
 // App Modules
-import { chartOperations } from '../../state/ducks/chart'
+import { chartOperations } from '../../../state/ducks/chart'
 
 // CSS
-import '../../../client/css/chart.scss'
+import '../../../../client/css/chart.scss'
 
 class Chart extends Component {
   constructor(props) {
