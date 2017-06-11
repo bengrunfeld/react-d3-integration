@@ -1,6 +1,6 @@
-# React Redux Express Starter App
+# React D3 Integration
 
-Use as a basic app to 
+Integrates D3 and React seamlessly using declarative JSX elements instead of D3 to manipulate the DOM
 
 ## Installation
 
@@ -14,6 +14,18 @@ Use as a basic app to
 * `npm run test`
 * `npm run coverage`
 
+## Main Libraries
+
+* React
+* D3
+* Redux
+
+## Next Features
+
+* Checkboxes to toggle Sidebar features (saved in State)
+* Creation of those features
+* Reselect for memoized computed data
+* Table that displays actual data
 
 ## Issues 
 
