@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import { App } from '../views/layouts'
-import { Home, D3Chart, SvgChart } from '../views/pages'
+import { D3Chart } from '../views/pages'
 
 const routes = () => { 
   return (

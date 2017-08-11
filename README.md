@@ -1,6 +1,6 @@
-# React Redux Express Starter App
+# React D3 Integration
 
-Use as a basic app to 
+Integrates D3 and React seamlessly using declarative JSX elements instead of D3 to manipulate the DOM
 
 ## Installation
 
@@ -14,11 +14,24 @@ Use as a basic app to
 * `npm run test`
 * `npm run coverage`
 
+## Main Libraries
+
+* React
+* D3
+* Redux
+
+## Next Features
+
+* Checkboxes to toggle Sidebar features (saved in State)
+* Creation of those features
+* Reselect for memoized computed data
+* Table that displays actual data
 
 ## Issues 
 
 * There are some development issues around `react-router`. Read more [here](https://github.com/ReactTraining/react-router/issues/4752).
 * Nodemon does not offer hot reloading on successful Webpack build, so a slightly hacky work around was used that utilizes Web Sockets and `setTimeout` on Nodemon restart. 
+* Isomorphic-fetch is no longer actively maintained, and has not received a commit in a year. Despite this, it still receives 150k downloads a day. [Fetch Ponyfill](https://github.com/qubyte/fetch-ponyfill) may be a good replacement, but it's hard to tell.
 
 ## APP HIGHLIGHTS:
 
@@ -38,6 +51,39 @@ Use as a basic app to
 ## Advanced Redux Concepts
 
 * `Operations` - We want to separate the thunks from the action creators, even with the cost of writing extra code. So we define an operation as a wrapper over actions. If the operation only dispatches a single action — doesn’t actually use redux-thunk — we forward the action creator function. If the operation uses a thunk, it can dispatch many actions and chain them with promises. Operations are part of the public interface of the duck. Actions are encapsulated, operations are exposed. [Read more](https://medium.freecodecamp.com/scaling-your-redux-app-with-ducks-6115955638be)
+
+## Features
+
+### Trend Viewer
+
+The sidebar allows you to choose which trends you'd like to see on the chart for a given time range
+
+### Data Table
+
+Data corresponding to the selected trend and time range will fill the table below the chart
+
+### Available Trends
+
+Currently, the current trends are available for the data:
+
+* Balance
+* Capped Balance
+* Balance with Fees
+* Capped Balance with Fees
+* Return
+* Capped Return
+* Return vs Capped Return
+
+
+
+
+
+
+
+
+
+
+
 
 
 
