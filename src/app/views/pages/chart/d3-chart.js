@@ -22,34 +22,34 @@ class Chart extends Component {
   }
 
   calculatePath(data, width, height, cap, years) {
-    let parseDate = d3.timeParse("%m/%d/%y")
-    let parseYears = d3.timeParse("%m/%d/%Y")
+    const parseDate = d3.timeParse("%m/%d/%y")
+    const parseYears = d3.timeParse("%m/%d/%Y")
 
-    let minYears = parseYears(`11/30/${years.min}`)
-    let maxYears = parseYears(`12/31/${years.max}`)
+    const minYears = parseYears(`11/30/${years.min}`)
+    const maxYears = parseYears(`12/31/${years.max}`)
 
-    let deriverdData = data.filter((d, i) => {
-      let parsedDate = parseDate(d.date)
+    const deriverdData = data.filter((d, i) => {
+      const parsedDate = parseDate(d.date)
       return (parsedDate >= minYears && parsedDate <= maxYears)
     })
 
-    let dateMinAndMax = d3.extent(deriverdData, d => parseDate(d.date))
-    let closeMinAndMax = d3.extent(deriverdData, d => d.close)
-    let adjCloseMinAndMax = d3.extent(deriverdData, d => d.adj_close)
+    const dateMinAndMax = d3.extent(deriverdData, d => parseDate(d.date))
+    const closeMinAndMax = d3.extent(deriverdData, d => d.close)
+    const adjCloseMinAndMax = d3.extent(deriverdData, d => d.adj_close)
 
-    let x = d3.scaleTime()
+    const x = d3.scaleTime()
               .domain(dateMinAndMax)
               .range([0, width])
-    let y = d3.scaleLinear()
+    const y = d3.scaleLinear()
               .domain(closeMinAndMax)
               .range([height, 0])
 
-    let yAxis = d3.axisLeft(y)
-    let xAxis = d3.axisBottom(x)
+    const yAxis = d3.axisLeft(y)
+    const xAxis = d3.axisBottom(x)
 
-    let margin = {left: 50, right: 50, top: 50, bottom: 0}
+    const margin = {left: 50, right: 50, top: 50, bottom: 0}
 
-    let line = d3.line()                      
+    const line = d3.line()                      
                     .x(d => x(parseDate(d.date)))
                     .y(d => y(d.close))
 
@@ -65,7 +65,8 @@ class Chart extends Component {
 
     return (
       <svg className="chart-container">
-        <path d={this.calculatePath(chart.data, 500, 600, sidebar.cap, sidebar.years)} className="path-0" />
+        {/* TODO: Pull width and height from a constants file */}
+        <path d={this.calculatePath(chart.data, 500, 500, sidebar.cap, sidebar.years)} className="path-0" />
       </svg>
     )
   }
@@ -89,14 +90,3 @@ const mapDispatchToProps = {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Chart)
-
-// export default (props) => (
-//   <App>
-//     <div><h1>This is D3</h1></div>
-// 
-//     {/* Conditionally renders content based on whether the URL Param exists */}
-//      // Use this.props when inside a stateful React Component
-//     {this.props.match.params.id ? <p>props.match.params.id</p>: ''}
-//     {this.props.match.params.query ? <p>props.match.params.query</p>: ''}
-//   </App>
-// )

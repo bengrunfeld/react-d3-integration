@@ -4,7 +4,7 @@
   "description": "Coding challenge for RetireUp",
   "main": "src/js/index.js",
   "scripts": {
-    "start": "nodemon index.js & ./node_modules/.bin/webpack-dev-server",
+    "start": "nodemon index.js",
     "test": "jest",
     "cover": "jest --coverage",
     "compile": "webpack",
